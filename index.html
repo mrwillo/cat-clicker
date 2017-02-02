@@ -8,19 +8,27 @@
     </script>
 </head>
 <body>
-    <img src="images/unnamed.jpg" id="cat"/>
-    <span>Click counted: </span><span id="catClick">0</span>
+    <span>Cat 1, </span><span>Clicked: </span><span id="count-cat1">0</span>
+    <br/>
+    <img src="images/unnamed.jpg" id="cat1"/>
+    <br/>
+    <br/>
+    <span>Cat 2, </span><span>Clicked: </span><span id="count-cat2">0</span>
+    <br/>
+    <img src="images/cat2.jpg" id="cat2"/>
 </body>
 <script>
-    var countEl = document.getElementById("catClick");
-    var count = countEl.innerHTML;
-    
-    document.getElementById("cat").addEventListener("click", function(){
-        increaseCount(count++);
-    });
+    document.getElementById("cat1").addEventListener("click", function(){
+        increaseCount("cat1");
+    }, false);
+    document.getElementById("cat2").addEventListener("click", function(){
+        increaseCount("cat2");
+    }, false);
 
-    function increaseCount(count) {
-        countEl.innerHTML = count;
+    function increaseCount(catName) {
+        var elCount = document.getElementById("count-"+catName);
+        var count = parseInt(elCount.innerHTML);
+        elCount.innerHTML = count+=1;
     }
 </script>
 </html>
