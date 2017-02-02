@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Cat clicker</title>
+    <script>
+
+    </script>
+</head>
+<body>
+    <img src="images/unnamed.jpg" id="cat"/>
+    <span>Click counted: </span><span id="catClick">0</span>
+</body>
+<script>
+    var countEl = document.getElementById("catClick");
+    var count = countEl.innerHTML;
+    
+    document.getElementById("cat").addEventListener("click", function(){
+        increaseCount(count++);
+    });
+
+    function increaseCount(count) {
+        countEl.innerHTML = count;
+    }
+</script>
+</html>
